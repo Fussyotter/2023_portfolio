@@ -9,6 +9,9 @@ import HomePage from '@/components/home';
 import Icons from '@/components/icons';
 import TextAnimation from '@/components/TextAnimation';
 import Background from '@/components/background';
+import Dust from '@/components/dust';
+
+
 export default function Home() {
 	const { isHome, isAbout, isProjects, isSkills } = useContext(HeaderContext);
 
@@ -29,7 +32,8 @@ export default function Home() {
 
 			<TextAnimation text={' Hi, I am stupid'} />
 
-			<Background />
+			{/* <Background /> */}
+			<Dust/>
 
 			<HomePage />
 			<div className='bg-cover bg-bottom bgimg-1 p-6 shadow-lg flex items-center space-x-4 space-y-2 rounded' />
