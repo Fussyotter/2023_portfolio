@@ -91,7 +91,7 @@ const Background = () => {
 	return (
 		<div className='absolute h-full w-full'>
 			<CircleSVG/>
-			{dots.map(({ x, y, i, angle, distance }) => (
+			{/* {dots.map(({ x, y, i, angle, distance }) => (
 				<motion.div
 				key={i}
 				className='absolute rounded-full bg-black z-axis'
@@ -105,8 +105,8 @@ const Background = () => {
 				initial='start'
 				animate='end'
 				/>
-				))}
-<BigCircle/>
+				))} */}
+{/* <BigCircle/> */}
 		</div>
 	);
 };

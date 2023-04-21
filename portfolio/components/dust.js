@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
 
 const Dust = () => {
 	const [dots, setDots] = useState(
@@ -13,8 +12,6 @@ const Dust = () => {
 		}))
 	);
 
-	const [isAnimating, setIsAnimating] = useState(true);
-
 	useEffect(() => {
 		const intervalId = setInterval(() => {
 			setDots((prevDots) =>
@@ -23,6 +20,17 @@ const Dust = () => {
 					const distance = dot.distance - 0.5;
 					const x = 300 + distance * Math.cos((angle * Math.PI) / 180);
 					const y = 300 + distance * Math.sin((angle * Math.PI) / 180);
+
+					if (distance <= 0) {
+						// reset the dot's angle and distance
+						// most effective reset I could come up with
+						return {
+							...dot,
+							distance: Math.random() * 100 + 100,
+							angle: Math.random() * 360,
+						};
+					}
+
 					return {
 						...dot,
 						x,
@@ -32,43 +40,31 @@ const Dust = () => {
 					};
 				})
 			);
-		}, 50);
+		}, 45);
 
 		return () => clearInterval(intervalId);
 	}, []);
 
-	const handleReset = () => {
-		setIsAnimating(false);
-		setDots((prevDots) =>
-			prevDots.map((dot) => ({
-				...dot,
-				distance: Math.random() * 100 + 50,
-				angle: Math.random() * 360,
-			}))
-		);
-		setTimeout(() => {
-			setIsAnimating(true);
-		}, 10);
-	};
+
+
 
 	return (
-		<svg viewBox='0 0 600 600' width='600' height='600'>
-			<motion.rect
-				x='0'
-				y='0'
-				width='600'
-				height='600'
-				fill='#000'
-				opacity='0.5'
-				animate={{ rotate: 360 }}
-				transition={{ loop: Infinity, duration: 20, ease: 'linear' }}
-				onClick={handleReset}
-				style={{ cursor: 'pointer' }}
-			/>
-			{dots.map(({ x, y, i, size }) => (
-				<circle key={i} cx={x} cy={y} r={size} fill='#ff6b6b' opacity='0.7' />
-			))}
-		</svg>
+		<div className='relative w-96 h-96 mx-auto'>
+			<svg
+				viewBox='0 0 600 600'
+				className='top-0 left-0 right-0 bottom-0 '>
+				{dots.map(({ x, y, i, size }) => (
+					<circle
+						key={i}
+						cx={x}
+						cy={y}
+						r={size}
+						className='fill-current text-blue-500 opacity-50 z-axis[-50]'
+						transition={{ repeat: Infinity, duration: 50, ease: 'linear' }}
+					/>
+				))}
+			</svg>
+		</div>
 	);
 };
 
