@@ -22,7 +22,9 @@ body {
   
 }
 
-
+body{
+  background-color: seashell;
+}
 
 a {
   color: inherit;

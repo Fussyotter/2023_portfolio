@@ -18,36 +18,41 @@ export default function Home() {
 
 	return (
 		<>
-			<div className='grid grid-rows-3 h-screen'>
-				<div className='bg-cover bg-top bgimg-1 p-10 shadow-lg flex items-center space-x-4 space-y-2 rounded row-span-1'>
+			<div className='grid grid-rows-3 grid-cols-4'>
+				<div className='row-1 col-span-4 bg-cover bg-top bgimg-1  grid-cols-8 grid-rows-3 shadow-lg flex items-center space-x-4 space-y-2 rounded row-span-1'>
 					<img
-						className='block mx-auto rounded-full sm:mx-0 sm:shrink-0'
+						className=' row-start-2 block mx-auto place-self-center rounded-full sm:mx-0 sm:shrink-0'
 						src='corgitwo.png'
 						alt='Logo'
 						width='100px'
 					/>
-					<div className='p-6 max-w-sm mx-auto rounded-xl shadow-lg'>
+					<div className='p-6 max-w-sm mx-auto row-start-2 col-start-2 col-span-2 rounded-xl shadow-lg'>
 						<h1 className='text-3xl text-orange-300 font-bold underline'>
 							Isaac A Anderson
 						</h1>
 					</div>
-					<Icons />
-					<Topics />
-				</div>
-				<div className='row-span-1'>
-					<TextAnimation text={' Welcome'} />
+					<div className='row-start-3 col-start-3'>
+						<Icons />
+					</div>
 					<div className=''>
-						<CircleLine />
-						<Header />
-						<HomePage />
-						{/* <div className='z-[-50]'>
+						<Topics />
+					</div>
+				</div>
+				<div className=' grid-cols-5 grid-rows-4'>
+					<div className='row-start-1'>
+						<TextAnimation text={' Welcome'} />
+					</div>
+					<CircleLine />
+					<Header />
+					<HomePage />
+				</div>
+			</div>
+
+			{/* <div className='z-[-50]'>
 					
 					<Dust />
 				</div> */}
-					</div>
-				</div>
-				<div className='row-span-1 bg-cover bg-bottom bgimg-1 p-6 shadow-lg flex items-center space-x-4 space-y-2 rounded' />
-			</div>
+			{/* <div className='row-span-1 bg-cover bg-bottom bgimg-1 p-6 shadow-lg flex items-center space-x-4 space-y-2 rounded' /> */}
 		</>
 	);
 }
