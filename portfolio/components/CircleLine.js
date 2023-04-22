@@ -21,6 +21,7 @@ const CircleLine = () => {
 						fill='freeze'
 					/>
 				</path>
+				
 			</svg>
 		</div>
 	);

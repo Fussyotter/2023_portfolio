@@ -11,6 +11,7 @@ import TextAnimation from '@/components/TextAnimation';
 import Background from '@/components/background';
 import Dust from '@/components/dust';
 import CircleLine from '@/components/CircleLine';
+import Topics from '@/components/topics';
 
 export default function Home() {
 	const { isHome, isAbout, isProjects, isSkills } = useContext(HeaderContext);
@@ -31,6 +32,7 @@ export default function Home() {
 						</h1>
 					</div>
 					<Icons />
+					<Topics />
 				</div>
 				<div className='row-span-1'>
 					<TextAnimation text={' Welcome'} />
@@ -39,8 +41,9 @@ export default function Home() {
 						<Header />
 						<HomePage />
 						{/* <div className='z-[-50]'>
-							<Dust />
-						</div> */}
+					
+					<Dust />
+				</div> */}
 					</div>
 				</div>
 				<div className='row-span-1 bg-cover bg-bottom bgimg-1 p-6 shadow-lg flex items-center space-x-4 space-y-2 rounded' />
