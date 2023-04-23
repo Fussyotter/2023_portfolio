@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 const CircleLine = () => {
 	return (
-		<div className='relative z-[-20] clear-left'>
+		<div className=' z-[-20] float-left'>
 		
 			<svg style={{ width: '100vh', height: '50px' }}>
 				

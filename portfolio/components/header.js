@@ -12,12 +12,12 @@ export default function Header  () {
 
 	return (
 		<>
-			<nav className=' divide-y divide-solid relative py-2 space-y-2 grid grid-rows-2 justify-items-center justify-left  font-serif max-w-sm mx-auto shadow-lg box-border h-32 w-32 border-4 float-left z-10'>
+			<nav className=' divide-y  py-2 space-y-2 grid grid-rows-2 justify-items-center justify-left  font-serif max-w-sm mx-auto shadow-lg box-border h-32 w-32 border-4 float-left z-10 '>
 			
-				<div className='flex items-center text-xl'>
+				<div className='flex items-center text-xl row-start-1  '>
 					<button onClick={handleProjectsClick}>Projects</button>
 				</div>
-				<div className='flex items-center text-xl'>
+				<div className='flex items-center text-xl row-start-2'>
 					<button onClick={handleSkillsClick}>Skills</button>
 				</div>
 			</nav>
