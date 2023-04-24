@@ -45,7 +45,7 @@ function MainSection() {
 				<TextAnimation text={' Welcome'} />
 			</div>
 			<CircleLine />
-			<div className='float-right'>
+			<div className='float-right  '>
 				<Topics />
 			</div>
 			<Skills />
