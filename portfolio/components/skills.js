@@ -26,7 +26,7 @@ export default function Skills() {
 			<h1 className='font-bold text-black'>Skills</h1>
 			<ul className='flex space-x-4'>
 				{skills.map(({ name, icon }) => (
-					<li key={name} className='text-black'>
+					<li key={name} style={{ color: 'black' }}>
 						{icon} {name}
 					</li>
 				))}
