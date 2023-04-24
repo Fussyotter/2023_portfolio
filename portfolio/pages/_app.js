@@ -1,4 +1,8 @@
 import '@/styles/globals.css'
+import 'tailwindcss/tailwind.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
+
 import { HeaderContext, HeaderProvider } from '@/context/context'
 import { StrictMode } from 'react'
 

@@ -1,0 +1,8 @@
+<svg viewBox="0 0 500 500">
+  <g stroke="green" stroke-width="2">
+    <line x1="0" y1="100" x2="100" y2="0" />
+    <line x1="0" y1="200" x2="200" y2="0" />
+    <line x1="0" y1="300" x2="300" y2="0" />
+    <line x1="0" y1="400" x2="400" y2="0" />
+  </g>
+</svg>

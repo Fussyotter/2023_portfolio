@@ -2,39 +2,28 @@ import React, { useContext } from 'react';
 import { HeaderContext } from '@/context/context';
 export default function Header  () {
 	const {
-		isHome,
 		isAbout,
 		isProjects,
 		isSkills,
-		handleHomeClick,
-		handleAboutClick,
+		
 		handleProjectsClick,
 		handleSkillsClick,
 	} = useContext(HeaderContext);
 
 	return (
-		<header>
-			<nav>
-				<ul>
-					<li>
-						<button onClick={handleHomeClick}>Home</button>
-					</li>
-					<li>
-						<button onClick={handleAboutClick}>About</button>
-					</li>
-					<li>
-						<button onClick={handleProjectsClick}>Projects</button>
-					</li>
-					<li>
-						<button onClick={handleSkillsClick}>Skills</button>
-					</li>
-				</ul>
+		<>
+			<nav className=' divide-y  py-2 space-y-2 grid grid-rows-2 justify-items-center justify-left  font-serif max-w-sm mx-auto shadow-lg box-border h-32 w-32 border-4 float-left z-10 '>
+			
+				<div className='flex items-center text-xl row-start-1  '>
+					<button onClick={handleProjectsClick}>Projects</button>
+				</div>
+				<div className='flex items-center text-xl row-start-2'>
+					<button onClick={handleSkillsClick}>Skills</button>
+				</div>
 			</nav>
-			<img src='corgitwo.png' alt='Logo' width='100px' />
-			{isHome && <h1>Home Page</h1>}
-			{isAbout && <h1>About Page</h1>}
-			{isProjects && <h1>Projects Page</h1>}
-			{isSkills && <h1>Skills Page</h1>}
-		</header>
+
+			{isProjects}
+			{isSkills}
+		</>
 	);
 };

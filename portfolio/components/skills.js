@@ -1,19 +1,39 @@
 import React from 'react';
+import {
+	FaJs,
+	FaReact,
+	FaNodeJs,
+	FaHtml5,
+	FaCss3,
+	FaGitAlt,
+} from 'react-icons/fa';
+import { DiPython, DiDjango } from 'react-icons/di';
 
-export default function Skills  ()  {
+const skills = [
+	{ name: 'JavaScript', icon: <FaJs /> },
+	{ name: 'React', icon: <FaReact /> },
+	{ name: 'Node.js', icon: <FaNodeJs /> },
+	{ name: 'HTML', icon: <FaHtml5 /> },
+	{ name: 'CSS', icon: <FaCss3 /> },
+	{ name: 'Git', icon: <FaGitAlt /> },
+	{ name: 'Django', icon: <DiDjango /> },
+	{ name: 'Python', icon: <DiPython /> },
+];
+
+export default function Skills() {
+	
+
 	return (
-		<div>
-			<h1>My Skills</h1>
-			<ul>
-				<li>JavaScript</li>
-				<li>React</li>
-				<li>Node.js</li>
-				<li>HTML</li>
-				<li>CSS</li>
-				<li>Git</li>
-                <li>Django</li>
-                <li>Python</li>
+		<div className='grid grid-rows-1 float-left p-4'>
+			<h1 className='font-bold'>Skills</h1>
+			<ul className='flex space-x-4'>
+				{skills.map(({ name, icon }) => (
+					<li key={name}>
+						{icon} {name}
+					</li>
+				))}
 			</ul>
+			
 		</div>
 	);
-};
+}
