@@ -15,7 +15,6 @@ import Topics from '@/components/topics';
 import Rolodex from '@/components/rolodex';
 
 function HeaderSection() {
-
 	return (
 		<div className='row-start-1 col-span-4 bg-cover  bgimg-1   shadow-lg flex items-center space-x-4 space-y-2  '>
 			<img
@@ -28,7 +27,7 @@ function HeaderSection() {
 				<h1 className='text-3xl text-orange-300 font-bold underline'>
 					Isaac A Anderson
 				</h1>
-				
+
 				<Icons />
 			</div>
 		</div>
@@ -37,8 +36,6 @@ function HeaderSection() {
 
 function MainSection() {
 	const { isHome, isAbout, isProjects, isSkills } = useContext(HeaderContext);
-
-
 
 	return (
 		<div className=' col-span-4  p-4 shadow-lg  space-x-4 rounded'>
@@ -50,7 +47,7 @@ function MainSection() {
 				<Topics />
 			</div>
 			<Skills />
-		
+
 			<div className=''>
 				<Projects />
 			</div>
@@ -64,7 +61,6 @@ function FooterSection() {
 		<div className='z-[-50]'>
 			<Dust />
 			<div className='row-span-1 bg-cover bg-bottom bgimg-1 p-6 shadow-lg flex items-center space-x-4 space-y-2 rounded' />
-
 		</div>
 	);
 }

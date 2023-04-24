@@ -25,15 +25,14 @@ export default function Skills() {
 
 	return (
 		<div className='grid grid-rows-1 float-left p-4'>
-			<h1 className='font-bold text-black'>Skills</h1>
+			<h1 className='font-bold'>Skills</h1>
 			<ul className='flex space-x-4'>
 				{skills.map(({ name, icon }) => (
-					<li key={name}>
+					<li key={name} style={{ color: 'black' }}>
 						{icon} {name}
 					</li>
 				))}
 			</ul>
-			
 		</div>
 	);
 }
