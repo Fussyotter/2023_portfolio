@@ -28,12 +28,11 @@ export default function Skills() {
 			<h1 className='font-bold'>Skills</h1>
 			<ul className='flex space-x-4'>
 				{skills.map(({ name, icon }) => (
-					<li key={name}>
+					<li key={name} style={{ color: 'black' }}>
 						{icon} {name}
 					</li>
 				))}
 			</ul>
-			
 		</div>
 	);
 }
