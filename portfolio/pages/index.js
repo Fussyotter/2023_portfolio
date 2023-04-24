@@ -12,6 +12,7 @@ import Background from '@/components/background';
 import Dust from '@/components/dust';
 import CircleLine from '@/components/CircleLine';
 import Topics from '@/components/topics';
+import Rolodex from '@/components/rolodex';
 
 function HeaderSection() {
 
