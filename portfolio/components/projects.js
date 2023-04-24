@@ -20,7 +20,7 @@ export default function Projects() {
 			name: 'SightSeer',
 			description:
 				'A Blog application that aims to provide users with a platform to share details of their upcoming trips. Users will be able to post trip information, including images and descriptions.',
-			liveDemoUrl: 'https://sightseer-backend.onrender.com/sights',
+			liveDemoUrl: 'https://sightseer-frontend.onrender.com/',
 			githubUrl: 'https://github.com/Alberto-Ibarra/sightseer_frontend',
 		},
 		{
@@ -34,7 +34,7 @@ export default function Projects() {
 
 
 	return (
-		<div className=' grid  grid-rows-2 grid-cols-2 gap-2 font-bold space-y-2 tracking-wide mx:auto text-center text-black text-2xl font-serif'>
+		<div className=' grid  grid-rows-2 grid-cols-2 gap-2 font-bold space-y-2 tracking-wide mx:auto text-center text-black text-2xl font-serif clear-left'>
 			
 			{projects.map((project, index) => (
 				<div

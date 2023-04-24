@@ -21,8 +21,10 @@ const skills = [
 ];
 
 export default function Skills() {
+	
+
 	return (
-		<div className='grid grid-rows-1'>
+		<div className='grid grid-rows-1 float-left p-4'>
 			<h1 className='font-bold'>Skills</h1>
 			<ul className='flex space-x-4'>
 				{skills.map(({ name, icon }) => (
@@ -31,6 +33,7 @@ export default function Skills() {
 					</li>
 				))}
 			</ul>
+			
 		</div>
 	);
 }

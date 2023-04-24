@@ -6,7 +6,6 @@
 .bgimg-1 {
   background-image: url('/gallatin.jpg');
   max-height: 500px;
-  background-position: center;
 }
 
 
@@ -21,7 +20,11 @@ body {
   /* max-width: 100vw; */
   
 }
-
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
 body{
   background-color: seashell;
   
