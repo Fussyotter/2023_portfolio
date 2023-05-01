@@ -16,7 +16,7 @@ import Rolodex from '@/components/rolodex';
 
 function HeaderSection() {
 	return (
-		<div className='row-start-1 col-span-4 bg-cover  bgimg-1   shadow-lg flex items-center space-x-4 space-y-2  '>
+		<div className='row-start-1 col-span-4 bg-cover  bgimg-1   shadow-2xl  flex items-center space-x-5 space-y-2 p-6  '>
 			<img
 				className='rounded-full   p-2 border-s-4 border-b-2 border-indigo-400/75 hover:border-blue-500'
 				src='corgitwo.png'
@@ -38,13 +38,14 @@ function MainSection() {
 	const { isHome, isAbout, isProjects, isSkills } = useContext(HeaderContext);
 
 	return (
-		<div className=' col-span-4  p-4 shadow-lg  space-x-4 rounded'>
+		<div className=' col-span-4  p-8 shadow-lg  space-x-4 rounded'>
 			<div className=''>
 				<TextAnimation text={' Welcome'} />
 			</div>
 			<CircleLine />
 			<div className='float-right  '>
 				<Topics />
+				<img src='next.svg' alt='Next.js' className='w-1/5 float-right' />
 			</div>
 			<Skills />
 
@@ -59,7 +60,7 @@ function MainSection() {
 function FooterSection() {
 	return (
 		<div className='z-[-50]'>
-			<Dust />
+			{/* <Dust /> */}
 			<div className='row-span-1 bg-cover bg-bottom bgimg-1 p-6 shadow-lg flex items-center space-x-4 space-y-2 rounded' />
 		</div>
 	);

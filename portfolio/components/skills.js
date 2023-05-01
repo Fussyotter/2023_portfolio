@@ -8,7 +8,6 @@ import {
 	FaGitAlt,
 } from 'react-icons/fa';
 import { DiPython, DiDjango } from 'react-icons/di';
-
 const skills = [
 	{ name: 'JavaScript', icon: <FaJs /> },
 	{ name: 'React', icon: <FaReact /> },
@@ -24,7 +23,7 @@ export default function Skills() {
 	
 
 	return (
-		<div className='grid grid-rows-1 float-left p-4'>
+		<div className='grid grid-rows-1 clear-left p-4'>
 			<h1 className='font-bold'>Skills</h1>
 			<ul className='flex space-x-4'>
 				{skills.map(({ name, icon }) => (
