@@ -10,7 +10,7 @@ export default function Topics() {
       <div className="sm:row-start-2 sm:col-start-1 sm:col-span-3 shadow-lg place-self-center rounded-full p-2 border-s-4 border-b-2 border-indigo-400/50 hover:border-blue-500">
         Frontend Development
       </div>
-      <div className="sm:row-start-2 sm:col-start-3 sm:col-span-2 shadow-lg place-self-center rounded-full p-2 border-s-4 border-b-2 border-indigo-400/50 hover:border-blue-500">
+      <div className="sm:row-start-2 sm:col-start-3 sm:col-span-1 shadow-lg place-self-center rounded-full p-2 border-s-4 border-b-2 border-indigo-400/50 hover:border-blue-500">
         Backend Development
       </div>
       <div className="sm:row-start-3 sm:col-start-2 sm:col-span-2 justify-self-center place-self-center rounded-full p-2 border-s-4 border-b-2 border-indigo-400/50 hover:border-blue-500">
