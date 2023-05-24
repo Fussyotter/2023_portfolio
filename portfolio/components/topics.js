@@ -18,14 +18,16 @@ const CustomCard = styled(Card)(({ theme }) => ({
 
 export default function Topics() {
 	return (
-		<div className='grid grid-cols-1 gap-2 mx-auto text-center font-bold space-y-2 tracking-wide text-2xl sm:grid-cols-3 sm:space-y-0'>
-			<CustomCard>
-				<CardContent>
-					<Typography variant='h5' component='h2'>
-						I'm interested in...
-					</Typography>
-				</CardContent>
-			</CustomCard>
+		<div className='grid grid-cols-1 gap-2 mx-auto text-center font-bold space-y-2 tracking-wide text-2xl sm:grid-cols-2 sm:space-y-0'>
+			<div className='flex items-center justify-center sm:row-span-3'>
+				<CustomCard>
+					<CardContent>
+						<Typography variant='h5' component='h2'>
+							I'm interested in...
+						</Typography>
+					</CardContent>
+				</CustomCard>
+			</div>
 
 			<CustomCard>
 				<CardContent>
@@ -46,7 +48,7 @@ export default function Topics() {
 			<CustomCard>
 				<CardContent>
 					<Typography variant='h5' component='h2'>
-						Fullstack Development
+						Intuitive Design
 					</Typography>
 				</CardContent>
 			</CustomCard>

@@ -39,19 +39,15 @@ function MainSection() {
 	return (
 		<div className=' col-span-4  p-8 shadow-lg  space-x-4 rounded'>
 			<div className=''>
-				<TextAnimation text={' Welcome'} />
+				<TextAnimation text={' Work'} />
 			</div>
 			<CircleLine />
 			<div className='float-right  '>
+				<img src='next.svg' alt='Next.js' className='w-1/5' />
 				<Topics />
-				<img src='next.svg' alt='Next.js' className='w-1/5 float-right' />
 			</div>
 			<Skills />
-
-			<div className=''>
-				<Projects />
-			</div>
-			{/* <HomePage /> */}
+			<Projects />
 		</div>
 	);
 }
