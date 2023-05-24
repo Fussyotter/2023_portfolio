@@ -4,7 +4,7 @@ function ResumeModal({ isModalOpen, handleCloseModal }) {
 	return (
 		<Modal isOpen={isModalOpen} onRequestClose={handleCloseModal}>
 			<button onClick={handleCloseModal}>Close</button>
-			<iframe src={'isaac_anderson_resume.pdf'} width='100%' height='500px' />
+			<iframe src={'isaac_anderson_resume (5).pdf'} width='100%' height='500px' />
 		</Modal>
 	);
 }

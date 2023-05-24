@@ -1,28 +1,55 @@
-import React from "react";
+import React from 'react';
+import { Card, CardContent, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles';
+
+// Custom styles for the Card component
+const CustomCard = styled(Card)(({ theme }) => ({
+	background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+	boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+	color: 'white',
+	padding: theme.spacing(2),
+	textAlign: 'center',
+	transition: 'all 0.3s',
+	'&:hover': {
+		transform: 'scale(1.1)',
+		boxShadow: '0 10px 15px 2px rgba(255, 105, 135, .3)',
+	},
+}));
 
 export default function Topics() {
-  return (
-    <div className="grid grid-cols-1 gap-2 font-bold space-y-2 tracking-wide mx-auto text-center text-black text-2xl font-serif sm:grid-cols-4 sm:grid-rows-4 sm:space-y-0 ">
-      <h1 className=" col-span-full sm:row-start-1 sm:col-start-1 sm:col-span-2 sm:place-self-center rounded-full shadow-lg p-2 border-s-4 border-b-2 border-indigo-400/50 hover:border-blue-500">
-        I'm interested in...
-      </h1>
+	return (
+		<div className='grid grid-cols-1 gap-2 mx-auto text-center font-bold space-y-2 tracking-wide text-2xl sm:grid-cols-3 sm:space-y-0'>
+			<CustomCard>
+				<CardContent>
+					<Typography variant='h5' component='h2'>
+						I'm interested in...
+					</Typography>
+				</CardContent>
+			</CustomCard>
 
-      <div className="sm:row-start-2 sm:col-start-1 sm:col-span-3 shadow-lg place-self-center rounded-full p-2 border-s-4 border-b-2 border-indigo-400/50 hover:border-blue-500">
-        Frontend Development
-      </div>
-      <div className="sm:row-start-2 sm:col-start-3 sm:col-span-1 shadow-lg place-self-center rounded-full p-2 border-s-4 border-b-2 border-indigo-400/50 hover:border-blue-500">
-        Backend Development
-      </div>
-      <div className="sm:row-start-3 sm:col-start-2 sm:col-span-2 justify-self-center place-self-center rounded-full p-2 border-s-4 border-b-2 border-indigo-400/50 hover:border-blue-500">
-        Fullstack Development
-      </div>
-      <div className="sm:row-start-4 sm:col-start-3 shadow-lg rounded-full p-2 border-s-4 border-b-2 border-indigo-400/50 hover:border-blue-500">
-        Prompt Engineering
-      </div>
+			<CustomCard>
+				<CardContent>
+					<Typography variant='h5' component='h2'>
+						Frontend Development
+					</Typography>
+				</CardContent>
+			</CustomCard>
 
-      <div className="sm:row-start-4 sm:col-start-4 shadow-lg rounded-full p-2 border-s-4 border-b-2 border-indigo-400/50 hover:border-blue-500">
-        Dogs
-      </div>
-    </div>
-  );
+			<CustomCard>
+				<CardContent>
+					<Typography variant='h5' component='h2'>
+						Backend Development
+					</Typography>
+				</CardContent>
+			</CustomCard>
+
+			<CustomCard>
+				<CardContent>
+					<Typography variant='h5' component='h2'>
+						Fullstack Development
+					</Typography>
+				</CardContent>
+			</CustomCard>
+		</div>
+	);
 }
