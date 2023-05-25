@@ -66,10 +66,10 @@ export default function Projects() {
 	};
 
 	// Map projects to marks for Slider component
-	const marks = projects.map((project, index) => ({
-		value: index,
-		label: project.name,
-	}));
+const marks = projects.map((project, index) => ({
+	value: index,
+	label: <span className='markLabel'>{project.name}</span>,
+}));
 
 	return (
 		<div>
@@ -83,6 +83,7 @@ export default function Projects() {
 						value={selectedProjectIndex}
 						onChange={handleSliderChange}
 						marks={marks}
+						
 					/>
 				</div>
 				<div className='w-full md:w-3/4 flex justify-center'>
