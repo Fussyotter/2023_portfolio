@@ -33,7 +33,7 @@ const TextAnimation = ({ text = '', className = '' }) => {
 	return (
 		<div className='flex justify-left items-center '>
 			<motion.h1
-				className={`inline-block text-dark font-bold  text-4xl space-y-3 ${className}`}
+				className={`inline-block text-dark font-bold  text-6xl space-y-1 p-1 ${className}`}
 				variants={textVariants}
 				initial='initial'
 				animate='animate'>
@@ -46,6 +46,7 @@ const TextAnimation = ({ text = '', className = '' }) => {
 					</motion.span>
 				))}
 			</motion.h1>
+			
 		</div>
 		
 	);

@@ -1,18 +1,14 @@
 import Head from 'next/head';
 import { useState, useContext } from 'react';
 import { HeaderContext } from '@/context/context';
-import Header from '@/components/header';
-import About from '@/components/about';
+
 import Projects from '@/components/projects';
 import Skills from '@/components/skills';
-import HomePage from '@/components/home';
 import Icons from '@/components/icons';
 import TextAnimation from '@/components/TextAnimation';
-import Background from '@/components/background';
-import Dust from '@/components/dust';
+
 import CircleLine from '@/components/CircleLine';
 import Topics from '@/components/topics';
-import Rolodex from '@/components/rolodex';
 
 function HeaderSection() {
 	return (
@@ -38,30 +34,28 @@ function MainSection() {
 	const { isHome, isAbout, isProjects, isSkills } = useContext(HeaderContext);
 
 	return (
-		<div className=' col-span-4  p-8 shadow-lg  space-x-4 rounded'>
-			<div className=''>
-				<TextAnimation text={' Welcome'} />
-			</div>
-			<CircleLine />
-			<div className='float-right  '>
-				<Topics />
-				<img src='next.svg' alt='Next.js' className='w-1/5 float-right' />
-			</div>
-			<Skills />
-
-			<div className=''>
+		<div className='grid grid-cols-1 md:grid-cols-3 gap-2 p-8 shadow-lg rounded'>
+			<div className='col-span-1 flex flex-col  justify-center'>
+				<TextAnimation text={'Work'} />
 				<Projects />
 			</div>
-			{/* <HomePage /> */}
+			<div className='col-span-1 flex flex-col items-center'>
+				<TextAnimation text={'Skills'} />
+				<Skills />
+			</div>
+			<div className='col-span-1 flex flex-col items-center'>
+				<img src='next.svg' alt='Next.js' className='w-1/5' />
+				<Topics />
+			</div>
 		</div>
 	);
 }
 
+
 function FooterSection() {
 	return (
 		<div className='z-[-50]'>
-			{/* <Dust /> */}
-			<div className='row-span-1 bg-cover bg-bottom bgimg-1 p-6 shadow-lg flex items-center space-x-4 space-y-2 rounded' />
+			<div className='row-span-1 bg-cover bg-bottom bgimg-1 p-6 shadow-2xl flex items-center space-x-4 space-y-2 rounded' />
 		</div>
 	);
 }
@@ -69,10 +63,8 @@ function FooterSection() {
 export default function Home() {
 	return (
 		<>
-			<div className='grid grid-rows-1 grid-cols-4'>
-				<HeaderSection />
-				<MainSection />
-			</div>
+			<HeaderSection />
+			<MainSection />
 			<FooterSection />
 		</>
 	);

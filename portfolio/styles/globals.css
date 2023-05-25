@@ -14,6 +14,20 @@
   padding: 0;
   margin: 0;
 }
+.markLabel {
+  cursor: pointer;
+  /* This will change the cursor to hand when hovering over a mark */
+  padding: 5px;
+  /* Add some padding */
+  border-radius: 4px;
+  /* Round the corners a bit */
+  transition: background 0.3s;
+  /* Transition the background color smoothly */
+}
+.markLabel:hover {
+  background: rgba(0, 0, 0, 0.1);
+  /* Change the background color when hovered */
+}
 
 html,
 body {
@@ -25,9 +39,8 @@ body {
     font-size: 14px;
   }
 }
-body{
-  background-color: seashell;
-  
+body {
+  background: radial-gradient(circle at center, seashell, rgba(224, 154, 121, 0.705));
 }
 
 a {
