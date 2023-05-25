@@ -34,27 +34,27 @@ function MainSection() {
 	const { isHome, isAbout, isProjects, isSkills } = useContext(HeaderContext);
 
 	return (
-		<div className='grid grid-cols-3 gap-2 p-8 shadow-lg rounded'>
-			<div className='col-span-1'>
+		<div className='grid grid-cols-1 md:grid-cols-3 gap-2 p-8 shadow-lg rounded'>
+			<div className='col-span-1 flex flex-col  justify-center'>
 				<TextAnimation text={'Work'} />
 				<Projects />
 			</div>
-			<div className='col-span-1'>
+			<div className='col-span-1 flex flex-col items-center'>
 				<TextAnimation text={'Skills'} />
 				<Skills />
 			</div>
-			<div className='col-span-1'>
-				<img src='next.svg' alt='Next.js' className='w-2/5' />
+			<div className='col-span-1 flex flex-col items-center'>
+				<img src='next.svg' alt='Next.js' className='w-1/5' />
 				<Topics />
 			</div>
 		</div>
 	);
 }
 
+
 function FooterSection() {
 	return (
 		<div className='z-[-50]'>
-			{/* <Dust /> */}
 			<div className='row-span-1 bg-cover bg-bottom bgimg-1 p-6 shadow-2xl flex items-center space-x-4 space-y-2 rounded' />
 		</div>
 	);

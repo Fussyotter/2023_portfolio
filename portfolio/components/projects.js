@@ -49,8 +49,8 @@ const CustomCard = styled(Card)(({ theme }) => ({
 	background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
 	boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
 	color: 'white',
-	width: '400px',
-	height: '600px',
+	width: '300px',
+	height: '400px',
 	transition: 'all 0.3s',
 	'&:hover': {
 		transform: 'scale(1.1)',
@@ -58,75 +58,74 @@ const CustomCard = styled(Card)(({ theme }) => ({
 	},
 }));
 export default function Projects() {
-  const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
-  const selectedProject = projects[selectedProjectIndex];
+	const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
+	const selectedProject = projects[selectedProjectIndex];
 
-  const handleSliderChange = (event, newValue) => {
-    setSelectedProjectIndex(newValue);
-  };
+	const handleSliderChange = (event, newValue) => {
+		setSelectedProjectIndex(newValue);
+	};
 
-  // Map projects to marks for Slider component
-  const marks = projects.map((project, index) => ({
-    value: index,
-    label: project.name,
-  }));
+	// Map projects to marks for Slider component
+	const marks = projects.map((project, index) => ({
+		value: index,
+		label: project.name,
+	}));
 
-  return (
-	<div>
-			{/* <Typography variant='h2' component='h1' gutterBottom>
-				Work
-			</Typography> */}
-		<div className='flex gap-4'>
-			<div className='w-1/4'>
-				<Slider
-					orientation='vertical'
-					min={0}
-					max={projects.length - 1}
-					step={1}
-					value={selectedProjectIndex}
-					onChange={handleSliderChange}
-					marks={marks}
-				/>
-			</div>
-			<div className='w-3/4'>
-				{selectedProject && (
-					<CustomCard>
-						<CardMedia
-							component='img'
-							height='140'
-							image={selectedProject.image}
-							alt={selectedProject.name}
-						/>
+	return (
+		<div>
+			<div className='flex gap-4 py-8'>
+				<div className='w-1/4'>
+					<Slider
+						orientation='vertical'
+						min={0}
+						max={projects.length - 1}
+						step={1}
+						value={selectedProjectIndex}
+						onChange={handleSliderChange}
+						marks={marks}
+					/>
+				</div>
+				<div className='w-full md:w-3/4 flex justify-center'>
+					<div className='max-w-full md:max-w-3/4'>
+						{selectedProject && (
+							<CustomCard>
+								<CardMedia
+									component='img'
+									height='140'
+									image={selectedProject.image}
+									alt={selectedProject.name}
+								/>
 
-						<CardContent>
-							<Typography variant='h5' component='h2'>
-								{selectedProject.name}
-							</Typography>
-							<Typography variant='body2'>
-								{selectedProject.description}
-							</Typography>
-						</CardContent>
+								<CardContent>
+									<Typography variant='h5' component='h2'>
+										{selectedProject.name}
+									</Typography>
+									<Typography variant='body2'>
+										{selectedProject.description}
+									</Typography>
+								</CardContent>
 
-						<CardActions>
-							<Button
-								size='small'
-								href={selectedProject.liveDemoUrl}
-								target='_blank'
-								rel='noopener noreferrer'>
-								Live Demo
-							</Button>
-							<Button
-								size='small'
-								href={selectedProject.githubUrl}
-								target='_blank'
-								rel='noopener noreferrer'>
-								GitHub Repository
-							</Button>
-						</CardActions>
-					</CustomCard>
-				)}
+								<CardActions>
+									<Button
+										size='small'
+										href={selectedProject.liveDemoUrl}
+										target='_blank'
+										rel='noopener noreferrer'>
+										Live Demo
+									</Button>
+									<Button
+										size='small'
+										href={selectedProject.githubUrl}
+										target='_blank'
+										rel='noopener noreferrer'>
+										GitHub Repository
+									</Button>
+								</CardActions>
+							</CustomCard>
+						)}
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
 	);
 }

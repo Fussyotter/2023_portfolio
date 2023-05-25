@@ -14,8 +14,6 @@ import {
 	purple,
 	deepOrange,
 } from '@mui/material/colors';
-import PythonIcon from '@mui/icons-material/Psychology';
-// import ReactIcon from '@mui/icons-material/React';
 import NodeIcon from '@mui/icons-material/Grass';
 import Html5Icon from '@mui/icons-material/Http';
 import Css3Icon from '@mui/icons-material/Style';
@@ -44,16 +42,23 @@ const skills = [
 
 export default function Skills() {
 	return (
-		<div>
-	
-			<List>
-				{skills.map(({ name, icon }) => (
+		<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', marginTop: '20px' }}>
+			<div>
+				{skills.slice(0, 4).map(({ name, icon }) => (
 					<ListItem key={name}>
 						<ListItemIcon>{icon}</ListItemIcon>
 						<ListItemText primary={name} />
 					</ListItem>
 				))}
-			</List>
+			</div>
+			<div>
+				{skills.slice(4).map(({ name, icon }) => (
+					<ListItem key={name}>
+						<ListItemIcon>{icon}</ListItemIcon>
+						<ListItemText primary={name} />
+					</ListItem>
+				))}
+			</div>
 		</div>
 	);
 }
