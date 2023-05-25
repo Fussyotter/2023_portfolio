@@ -1,15 +1,12 @@
 import Head from 'next/head';
 import { useState, useContext } from 'react';
 import { HeaderContext } from '@/context/context';
-import Header from '@/components/header';
-import About from '@/components/about';
+
 import Projects from '@/components/projects';
 import Skills from '@/components/skills';
-import HomePage from '@/components/home';
 import Icons from '@/components/icons';
 import TextAnimation from '@/components/TextAnimation';
-import Background from '@/components/background';
-import Dust from '@/components/dust';
+
 import CircleLine from '@/components/CircleLine';
 import Topics from '@/components/topics';
 
@@ -37,17 +34,19 @@ function MainSection() {
 	const { isHome, isAbout, isProjects, isSkills } = useContext(HeaderContext);
 
 	return (
-		<div className=' col-span-4  p-8 shadow-lg  space-x-4 rounded'>
-			<div className=''>
-				<TextAnimation text={' Work'} />
+		<div className='grid grid-cols-3 gap-2 p-8 shadow-lg rounded'>
+			<div className='col-span-1'>
+				<TextAnimation text={'Work'} />
+				<Projects />
 			</div>
-			<CircleLine />
-			<div className='float-right  '>
-				<img src='next.svg' alt='Next.js' className='w-1/5' />
+			<div className='col-span-1'>
+				<TextAnimation text={'Skills'} />
+				<Skills />
+			</div>
+			<div className='col-span-1'>
+				<img src='next.svg' alt='Next.js' className='w-2/5' />
 				<Topics />
 			</div>
-			<Skills />
-			<Projects />
 		</div>
 	);
 }
@@ -56,7 +55,7 @@ function FooterSection() {
 	return (
 		<div className='z-[-50]'>
 			{/* <Dust /> */}
-			<div className='row-span-1 bg-cover bg-bottom bgimg-1 p-6 shadow-lg flex items-center space-x-4 space-y-2 rounded' />
+			<div className='row-span-1 bg-cover bg-bottom bgimg-1 p-6 shadow-2xl flex items-center space-x-4 space-y-2 rounded' />
 		</div>
 	);
 }
@@ -64,10 +63,8 @@ function FooterSection() {
 export default function Home() {
 	return (
 		<>
-			<div className='grid grid-rows-1 grid-cols-4'>
-				<HeaderSection />
-				<MainSection />
-			</div>
+			<HeaderSection />
+			<MainSection />
 			<FooterSection />
 		</>
 	);
