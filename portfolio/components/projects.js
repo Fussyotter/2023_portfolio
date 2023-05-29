@@ -10,6 +10,7 @@ import {
 } from '@mui/material';
 
 import { styled } from "@mui/material/styles";
+import { SelectedSkillsContext } from '@/context/projectSkills';
 
 const projects = [
 	{
@@ -17,6 +18,7 @@ const projects = [
 		image: 'news.png',
 		description:
 			'Django backend and React Frontend to collect news stories and tailor bookmarks to authenticated user preference. Fully functioning search feature to find news stories by keyword. Many to Many User models to save articles to User profile.',
+		technologies: ['Django', 'React', 'Python', 'JavaScript', 'HTML', 'CSS'],
 		liveDemoUrl: 'https://news-frontend.onrender.com/',
 		githubUrl: 'https://github.com/Fussyotter/ga_project4_frontend',
 	},
@@ -25,6 +27,7 @@ const projects = [
 		image: 'sightseer.jpeg',
 		description:
 			'A Blog application that aims to provide users with a platform to share details of their upcoming trips. Create React App. Users will be able to post trip information, including images and descriptions.',
+		technologies: ['Django', 'React', 'Python', 'JavaScript', 'HTML', 'CSS'],
 		liveDemoUrl: 'https://sightseer-frontend.onrender.com/',
 		githubUrl: 'https://github.com/Alberto-Ibarra/sightseer_frontend',
 	},
@@ -32,7 +35,8 @@ const projects = [
 		name: 'Sage',
 		image: 'sage.png',
 		description:
-			'Django backend with Next.js frontend. User to User Messaging with authenticated endpoints, custom animations and styling.  OPENAI davinci API integration to generate gift ideas based on user input and then inject HTML directly.',
+			'Developed a Full-Stack Messaging App with secure login/signup, inbox, and real-time chat updates. Integrated OpenAI API (text-davinci-003 model) to generate gift lists based on user inputs and present them on the page.',
+		technologies: ['Django', 'Next.JS', 'Python', 'JavaScript', 'DRF', 'Djoser', 'Channels', 'Postgres', 'HTML', 'CSS'],
 		liveDemoUrl: 'https://sage-front-5srp5qym8-fussyotter.vercel.app/',
 		githubUrl: 'https://github.com/Fussyotter/sage_front/tree/main',
 	},
@@ -41,6 +45,7 @@ const projects = [
 		image: 'fishmonger.png',
 		description:
 			'FishMongerDB  displays API calls from fishwatch.gov. It is built using Javascript, Mongoose, Express, and EJS, barebones.css and has fully functioning search bar and pagination.',
+		technologies: ['Django', 'React', 'Python', 'JavaScript', 'HTML', 'CSS'],
 		liveDemoUrl: 'https://fish-finding.onrender.com/fish',
 		githubUrl: 'https://github.com/Fussyotter/project2',
 	},
@@ -58,15 +63,18 @@ const CustomCard = styled(Card)(({ theme }) => ({
 	},
 }));
 export default function Projects() {
+	const {  setSelectedSkills } = React.useContext(SelectedSkillsContext);
 	const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
 	const selectedProject = projects[selectedProjectIndex];
 
 	const handleSliderChange = (event, newValue) => {
-		setSelectedProjectIndex(newValue);
+		setSelectedProjectIndex(newValue)
+		setSelectedSkills(selectedProject.technologies);
+;
 	};
 
-	// Map projects to marks for Slider component
-const marks = projects.map((project, index) => ({
+
+	const marks = projects.map((project, index) => ({
 	value: index,
 	label: <span className='markLabel'>{project.name}</span>,
 }));
@@ -83,7 +91,6 @@ const marks = projects.map((project, index) => ({
 						value={selectedProjectIndex}
 						onChange={handleSliderChange}
 						marks={marks}
-						
 					/>
 				</div>
 				<div className='w-full md:w-3/4 flex justify-center'>
@@ -103,6 +110,9 @@ const marks = projects.map((project, index) => ({
 									</Typography>
 									<Typography variant='body2'>
 										{selectedProject.description}
+									</Typography>
+									<Typography variant='body2'>
+										Created with: {selectedProject.technologies.join(', ')}
 									</Typography>
 								</CardContent>
 

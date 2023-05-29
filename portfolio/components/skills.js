@@ -28,7 +28,7 @@ import {
 	FaGitAlt,
 	FaPython,
 } from 'react-icons/fa';
-
+import { SelectedSkillsContext } from '@/context/projectSkills';
 const skills = [
 	{ name: 'JavaScript', icon: <FaJs style={{ color: yellow[700] }} /> },
 	{ name: 'React', icon: <FaReact style={{ color: blue[700] }} /> },
@@ -41,11 +41,23 @@ const skills = [
 ];
 
 export default function Skills() {
+	const { selectedSkills } = React.useContext(SelectedSkillsContext);
 	return (
-		<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', marginTop: '20px' }}>
+		<div
+			style={{
+				display: 'grid',
+				gridTemplateColumns: '1fr 1fr',
+				marginTop: '20px',
+			}}>
 			<div>
 				{skills.slice(0, 4).map(({ name, icon }) => (
-					<ListItem key={name}>
+					<ListItem
+						key={name}
+						style={{
+							backgroundColor: selectedSkills.includes(name)
+								? '#f0f0f0'
+								: 'transparent',
+						}}>
 						<ListItemIcon>{icon}</ListItemIcon>
 						<ListItemText primary={name} />
 					</ListItem>
@@ -53,7 +65,13 @@ export default function Skills() {
 			</div>
 			<div>
 				{skills.slice(4).map(({ name, icon }) => (
-					<ListItem key={name}>
+					<ListItem
+						key={name}
+						style={{
+							backgroundColor: selectedSkills.includes(name)
+								? '#f0f0f0'
+								: 'transparent',
+						}}>
 						<ListItemIcon>{icon}</ListItemIcon>
 						<ListItemText primary={name} />
 					</ListItem>
