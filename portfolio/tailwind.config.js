@@ -11,7 +11,6 @@ module.exports = {
 	theme: {
 		fontFamily: {
 			sans: [
-			
 				{
 					fontFeatureSettings: '"cv11", "ss01"',
 					fontVariationSettings: '"opsz" 32',
@@ -23,6 +22,9 @@ module.exports = {
 					fontFeatureSettings: '"liga", "kern"',
 				},
 			],
+		},
+		container: {
+			center: true,
 		},
 	},
 	plugins: [],

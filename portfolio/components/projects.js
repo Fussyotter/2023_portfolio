@@ -126,8 +126,8 @@ export default function Projects() {
 
 	return (
 		<div>
-			<div className='flex gap-20 py-8'>
-				<div className='w-1/3 mr-12'>
+			<div className='flex flex-col sm:flex-row gap-6 sm:gap-20 py-8'>
+				<div className='w-full sm:w-1/3 h-64 sm:h-auto overflow-y-auto sm:overflow-visible mr-0 sm:mr-12'>
 					<Slider
 						orientation='vertical'
 						min={0}
@@ -138,7 +138,7 @@ export default function Projects() {
 						marks={marks}
 					/>
 				</div>
-				<div className='w-full md:w-2/3 flex ml-12'>
+				<div className='w-full sm:w-2/3 flex mt-6 sm:mt-0 ml-0 sm:ml-12'>
 					<div className='max-w-full md:max-w-3/4'>
 						{selectedProject && (
 							<CustomCard>
