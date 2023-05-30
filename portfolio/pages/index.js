@@ -34,7 +34,7 @@ function MainSection() {
 			</div>
 			<div className='col-span-1 flex flex-col justify-start items-start md:items-start '>
 				<TextAnimation text={'Skills'} />
-				<Skills />
+				<Skills/>
 			</div>
 			<div className='col-span-1 flex flex-col justify-start items-center md:items-start'>
 				<img src='next.svg' alt='Next.js' className='w-1/5 mx-auto' />

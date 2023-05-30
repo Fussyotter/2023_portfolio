@@ -9,7 +9,7 @@ import {
 	Slider,
 } from '@mui/material';
 
-import { styled } from "@mui/material/styles";
+import { styled } from '@mui/material/styles';
 import { SelectedSkillsContext } from '@/context/projectSkills';
 
 const projects = [
@@ -18,7 +18,15 @@ const projects = [
 		image: '',
 		description:
 			'This shell is an ecommerce platform built using Next.js, Material UI, Stripe API.  Features comprehensive product search and browse capabilities, detailed product views,shopping cart functionality, and secure checkout process powered by Stripe API. Responsive design with Material UI Admin dashboard for managing products, orders, and customers User authentication and authorization',
-		technologies: [ 'Next.JS', 'HTML', 'CSS', 'JavaScript', 'Material UI', 'Stripe', 'React'],
+		technologies: [
+			'Next.JS',
+			'HTML',
+			'CSS',
+			'JavaScript',
+			'Material UI',
+			'Stripe',
+			'React',
+		],
 		githubUrl: 'https://github.com/Fussyotter/backend_ecomm_shell',
 	},
 	{
@@ -26,7 +34,7 @@ const projects = [
 		image: '',
 		description:
 			'A Django backend for a small business ecommerce site. This shell contains customizable product models with a variety of specifics to help categorize and search. User Authentication and Stripe Payment are within the shell as well. The intention for this shell is a base for small ecommerce sites that can be customized to fit the needs of the business. ',
-		technologies: ['Django', 'Python','Stripe','MaterialUI'],
+		technologies: ['Django', 'Python', 'Stripe', 'MaterialUI'],
 		githubUrl: 'https://github.com/Fussyotter/backend_ecomm_shell',
 	},
 	{
@@ -51,7 +59,7 @@ const projects = [
 		name: 'Sage',
 		image: 'sage.png',
 		description:
-			'Developed a Full-Stack Messaging App with secure login/signup, inbox, and real-time chat updates. Integrated OpenAI API (text-davinci-003 model) to generate gift lists based on user inputs and present them on the page.',
+			'Developed a Full-Stack Messaging App with secure login/signup, inbox, and real-time chat updates. Integrated OpenAI API (text-davinci-003 model) to generate gift lists based on user inputs.',
 		technologies: [
 			'Django',
 			'Next.JS',
@@ -64,7 +72,7 @@ const projects = [
 			'Postgres',
 			'HTML',
 			'CSS',
-			'OpenAI'
+			'OpenAI',
 		],
 		liveDemoUrl: 'https://sage-front-5srp5qym8-fussyotter.vercel.app/',
 		githubUrl: 'https://github.com/Fussyotter/sage_front/tree/main',
@@ -74,13 +82,22 @@ const projects = [
 		image: 'fishmonger.png',
 		description:
 			'FishMongerDB  displays API calls from fishwatch.gov to provide users with with specific details on fisheries and health benefits of fish.',
-		technologies: ['Django', 'React', 'Python', 'JavaScript', 'HTML', 'CSS', 'Mongoose'],
+		technologies: [
+			'Django',
+			'React',
+			'Python',
+			'JavaScript',
+			'HTML',
+			'CSS',
+			'Mongoose',
+		],
 		liveDemoUrl: 'https://fish-finding.onrender.com/fish',
 		githubUrl: 'https://github.com/Fussyotter/project2',
 	},
 ];
 const CustomCard = styled(Card)(({ theme }) => ({
 	background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+	padding: '4px',
 	boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
 	color: 'white',
 	width: '300px',
@@ -92,26 +109,25 @@ const CustomCard = styled(Card)(({ theme }) => ({
 	},
 }));
 export default function Projects() {
-	const {  setSelectedSkills } = React.useContext(SelectedSkillsContext);
+	const { setSelectedSkills } = React.useContext(SelectedSkillsContext);
 	const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
 	const selectedProject = projects[selectedProjectIndex];
 
 	const handleSliderChange = (event, newValue) => {
-	setSelectedProjectIndex(newValue);
-	const newSelectedProject = projects[newValue];
-	setSelectedSkills(newSelectedProject.technologies);
-};
-
+		setSelectedProjectIndex(newValue);
+		const newSelectedProject = projects[newValue];
+		setSelectedSkills(newSelectedProject.technologies);
+	};
 
 	const marks = projects.map((project, index) => ({
-	value: index,
-	label: <span className='markLabel'>{project.name}</span>,
-}));
+		value: index,
+		label: <span className='markLabel'>{project.name}</span>,
+	}));
 
 	return (
 		<div>
-			<div className='flex gap-10 py-8'>
-				<div className='w-1/4'>
+			<div className='flex gap-20 py-8'>
+				<div className='w-1/3 mr-12'>
 					<Slider
 						orientation='vertical'
 						min={0}
@@ -122,7 +138,7 @@ export default function Projects() {
 						marks={marks}
 					/>
 				</div>
-				<div className='w-full md:w-3/4 flex justify-center'>
+				<div className='w-full md:w-2/3 flex ml-12'>
 					<div className='max-w-full md:max-w-3/4'>
 						{selectedProject && (
 							<CustomCard>

@@ -78,7 +78,7 @@ function Skills() {
 	});
 
 	return (
-		<Grid container spacing={2}>
+		<Grid container spacing={2} className="py-8">
 			{transitions((props, { name, icon }) => (
 				<Grid item xs={6}>
 					<animated.div style={props}>
