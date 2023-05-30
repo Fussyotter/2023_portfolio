@@ -5,24 +5,26 @@
 
 .bgimg-1 {
   background-image: url('/gallatin.jpg');
-  max-height: 500px;
+  /* max-height: 500px; */
+}
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-
-* {
+/* * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
+} */
 .markLabel {
   cursor: pointer;
-  /* This will change the cursor to hand when hovering over a mark */
   padding: 5px;
-  /* Add some padding */
   border-radius: 4px;
-  /* Round the corners a bit */
   transition: background 0.3s;
-  /* Transition the background color smoothly */
 }
 .markLabel:hover {
   background: rgba(0, 0, 0, 0.1);
@@ -31,7 +33,7 @@
 
 html,
 body {
-  /* max-width: 100vw; */
+  max-width: 100vw;
   
 }
 @media only screen and (max-width: 768px) {
