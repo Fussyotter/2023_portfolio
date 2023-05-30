@@ -1,13 +1,8 @@
-import Head from 'next/head';
-import { useState, useContext } from 'react';
-import { HeaderContext } from '@/context/context';
-
 import Projects from '@/components/projects';
 import Skills from '@/components/skills';
 import Icons from '@/components/icons';
 import TextAnimation from '@/components/TextAnimation';
 
-import CircleLine from '@/components/CircleLine';
 import Topics from '@/components/topics';
 
 function HeaderSection() {
@@ -31,26 +26,23 @@ function HeaderSection() {
 }
 
 function MainSection() {
-	const { isHome, isAbout, isProjects, isSkills } = useContext(HeaderContext);
-
 	return (
 		<div className='grid grid-cols-1 md:grid-cols-3 gap-2 p-8 shadow-lg rounded'>
-			<div className='col-span-1 flex flex-col  justify-center'>
+			<div className='col-span-1 flex flex-col justify-start items-start md:items-start'>
 				<TextAnimation text={'Work'} />
 				<Projects />
 			</div>
-			<div className='col-span-1 flex flex-col items-center'>
+			<div className='col-span-1 flex flex-col justify-start items-start md:items-start '>
 				<TextAnimation text={'Skills'} />
 				<Skills />
 			</div>
-			<div className='col-span-1 flex flex-col items-center'>
-				<img src='next.svg' alt='Next.js' className='w-1/5' />
+			<div className='col-span-1 flex flex-col justify-start items-center md:items-start'>
+				<img src='next.svg' alt='Next.js' className='w-1/5 mx-auto' />
 				<Topics />
 			</div>
 		</div>
 	);
 }
-
 
 function FooterSection() {
 	return (

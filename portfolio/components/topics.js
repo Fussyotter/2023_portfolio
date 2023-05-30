@@ -48,7 +48,7 @@ export default function Topics() {
 			<CustomCard>
 				<CardContent>
 					<Typography variant='h5' component='h2'>
-						Intuitive Design
+						Centering Divs
 					</Typography>
 				</CardContent>
 			</CustomCard>

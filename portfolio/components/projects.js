@@ -64,6 +64,7 @@ const projects = [
 			'Postgres',
 			'HTML',
 			'CSS',
+			'OpenAI'
 		],
 		liveDemoUrl: 'https://sage-front-5srp5qym8-fussyotter.vercel.app/',
 		githubUrl: 'https://github.com/Fussyotter/sage_front/tree/main',
