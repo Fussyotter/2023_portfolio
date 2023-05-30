@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useContext, useMemo}from 'react';
 import {
 	List,
 	ListItem,
 	ListItemIcon,
 	ListItemText,
 	Typography,
+	Box,
 } from '@mui/material';
 import {
 	yellow,
@@ -29,6 +30,9 @@ import {
 	FaPython,
 } from 'react-icons/fa';
 import { SelectedSkillsContext } from '@/context/projectSkills';
+import { useTransition, animated } from 'react-spring';
+
+
 const skills = [
 	{ name: 'JavaScript', icon: <FaJs style={{ color: yellow[700] }} /> },
 	{ name: 'React', icon: <FaReact style={{ color: blue[700] }} /> },
@@ -40,43 +44,69 @@ const skills = [
 	{ name: 'Python', icon: <FaPython style={{ color: blue[500] }} /> },
 ];
 
-export default function Skills() {
-	const { selectedSkills } = React.useContext(SelectedSkillsContext);
+function Skills() {
+	const { selectedSkills } = useContext(SelectedSkillsContext);
+
+	const highlightedSkills = useMemo(() => {
+		return skills.filter((skill) => selectedSkills.includes(skill.name));
+	}, [selectedSkills]);
+
+	const otherSkills = useMemo(() => {
+		return skills.filter((skill) => !selectedSkills.includes(skill.name));
+	}, [selectedSkills]);
+
+	const highlightedTransitions = useTransition(highlightedSkills, {
+		key: (item) => item.name,
+		from: { opacity: 0, transform: 'translate3d(-50%, 0, 0)' },
+		enter: { opacity: 1, transform: 'translate3d(0%, 0, 0)' },
+		update: { opacity: 1, transform: 'translate3d(0%, 0, 0)' },
+		leave: { opacity: 0, transform: 'translate3d(-50%, 0, 0)' },
+		config: { mass: 5, tension: 500, friction: 100 },
+		trail: 25,
+	});
+
+	const otherTransitions = useTransition(otherSkills, {
+		key: (item) => item.name,
+		from: { opacity: 0, transform: 'translate3d(50%, 0, 0)' },
+		enter: { opacity: 1, transform: 'translate3d(0%, 0, 0)' },
+		update: { opacity: 1, transform: 'translate3d(0%, 0, 0)' },
+		leave: { opacity: 0, transform: 'translate3d(50%, 0, 0)' },
+		config: { mass: 5, tension: 500, friction: 100 },
+		trail: 25,
+	});
+
 	return (
-		<div
-			style={{
-				display: 'grid',
-				gridTemplateColumns: '1fr 1fr',
-				marginTop: '20px',
-			}}>
-			<div>
-				{skills.slice(0, 4).map(({ name, icon }) => (
-					<ListItem
-						key={name}
-						style={{
-							backgroundColor: selectedSkills.includes(name)
-								? '#f0f0f0'
-								: 'transparent',
-						}}>
-						<ListItemIcon>{icon}</ListItemIcon>
-						<ListItemText primary={name} />
-					</ListItem>
+		<Box display='flex' justifyContent='space-between'>
+			<Box width='50%'>
+				<h2></h2>
+				{highlightedTransitions((props, { name, icon }) => (
+					<animated.div style={props}>
+						<ListItem
+							style={{
+								backgroundColor: selectedSkills.includes(name)
+									? '#ff9800'
+									: 'transparent',
+								borderRadius: '5px',
+							}}>
+							<ListItemIcon>{icon}</ListItemIcon>
+							<ListItemText primary={name} />
+						</ListItem>
+					</animated.div>
 				))}
-			</div>
-			<div>
-				{skills.slice(4).map(({ name, icon }) => (
-					<ListItem
-						key={name}
-						style={{
-							backgroundColor: selectedSkills.includes(name)
-								? '#f0f0f0'
-								: 'transparent',
-						}}>
-						<ListItemIcon>{icon}</ListItemIcon>
-						<ListItemText primary={name} />
-					</ListItem>
+			</Box>
+			<Box width='50%'>
+				<h2></h2>
+				{otherTransitions((props, { name, icon }) => (
+					<animated.div style={props}>
+						<ListItem>
+							<ListItemIcon>{icon}</ListItemIcon>
+							<ListItemText primary={name} />
+						</ListItem>
+					</animated.div>
 				))}
-			</div>
-		</div>
+			</Box>
+		</Box>
 	);
 }
+
+export default Skills;
