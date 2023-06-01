@@ -27,16 +27,16 @@ function HeaderSection() {
 
 function MainSection() {
 	return (
-		<div className='grid grid-cols-1 md:grid-cols-3 gap-2 p-8 shadow-lg rounded'>
-			<div className='col-span-1 flex flex-col justify-start items-start md:items-start'>
+		<div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-2 p-8 shadow-lg rounded'>
+			<div className='col-span-1 flex flex-col justify-start items-start lg:items-start'>
 				<TextAnimation text={'Work'} />
 				<Projects />
 			</div>
-			<div className='col-span-1 flex flex-col justify-start items-start md:items-start '>
+			<div className='col-span-1 flex flex-col justify-start items-start lg:items-start '>
 				<TextAnimation text={'Skills'} />
-				<Skills/>
+				<Skills />
 			</div>
-			<div className='col-span-1 flex flex-col justify-start items-center md:items-start'>
+			<div className='col-span-1 flex flex-col justify-start items-center lg:items-start'>
 				<img src='next.svg' alt='Next.js' className='w-1/5 mx-auto' />
 				<Topics />
 			</div>
