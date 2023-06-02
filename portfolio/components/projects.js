@@ -62,7 +62,7 @@ const projects = [
 	},
 	{
 		name: 'Sage',
-		images: 'sage.png',
+		images: 'sage2.png',
 		description:
 			'Developed a Full-Stack Messaging App with secure login/signup, inbox, and real-time chat updates. Integrated OpenAI API (text-davinci-003 model) to generate gift lists based on user inputs.',
 		technologies: [
@@ -79,7 +79,7 @@ const projects = [
 			'CSS',
 			'OpenAI',
 		],
-		liveDemoUrl: 'https://sage-front-5srp5qym8-fussyotter.vercel.app/',
+		liveDemoUrl: 'https://sage-front-b6sfogaf5-fussyotter.vercel.app/',
 		githubUrl: 'https://github.com/Fussyotter/sage_front/tree/main',
 	},
 	{
@@ -123,7 +123,7 @@ const CustomCard = styled(Card)(({ theme }) => ({
 	'&::-webkit-scrollbar-thumb:hover': {
 		background: '#555',
 	},
-	'& scrollbar-color': '#888 #f1f1f1', // This is for Firefox
+	'& scrollbar-color': '#888 #f1f1f1', // Firefox
 	'& scrollbar-width': 'thin',
 	transition: 'all 0.3s',
 	'&:hover': {
