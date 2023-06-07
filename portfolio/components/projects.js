@@ -123,8 +123,8 @@ const CustomCard = styled(Card)(({ theme }) => ({
 	'&::-webkit-scrollbar-thumb:hover': {
 		background: '#555',
 	},
-	'& scrollbar-color': '#888 #f1f1f1', // Firefox
-	'& scrollbar-width': 'thin',
+	'& scrollbarColor': '#888 #f1f1f1', // Firefox
+	'& scrollbarWidth': 'thin',
 	transition: 'all 0.3s',
 	'&:hover': {
 		transform: 'scale(1.1)',
