@@ -181,7 +181,7 @@ return (
 					marks={marks}
 				/>
 			</div>
-			<div className='w-full md:w-2/3 flex mt-6 md:mt-0 ml-12 md:ml-12'>
+			<div className='w-full md:w-2/3 flex mt-6 md:mt-0  md:ml-12'>
 				<div className='max-w-full md:max-w-3/4'>
 					{selectedProject && (
 						<CustomCard>
