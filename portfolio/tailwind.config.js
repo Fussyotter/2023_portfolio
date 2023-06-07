@@ -8,7 +8,7 @@ module.exports = {
 		// Or if using `src` directory:
 		'./src/**/*.{js,ts,jsx,tsx,mdx}',
 	],
-	theme: {
+	theme: {		
 		fontFamily: {
 			sans: [
 				{
@@ -26,6 +26,11 @@ module.exports = {
 		container: {
 			center: true,
 		},
+		extend: {
+			screens: {
+				'custom':'1350px',
+	},
+},
 	},
 	plugins: [],
 };

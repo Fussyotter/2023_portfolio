@@ -123,8 +123,8 @@ const CustomCard = styled(Card)(({ theme }) => ({
 	'&::-webkit-scrollbar-thumb:hover': {
 		background: '#555',
 	},
-	'& scrollbar-color': '#888 #f1f1f1', // Firefox
-	'& scrollbar-width': 'thin',
+	'& scrollbarColor': '#888 #f1f1f1', // Firefox
+	'& scrollbarWidth': 'thin',
 	transition: 'all 0.3s',
 	'&:hover': {
 		transform: 'scale(1.1)',
@@ -181,7 +181,7 @@ return (
 					marks={marks}
 				/>
 			</div>
-			<div className='w-full md:w-2/3 flex mt-6 md:mt-0 ml-12 md:ml-12'>
+			<div className='w-full md:w-2/3 flex mt-6 md:mt-0  md:ml-12'>
 				<div className='max-w-full md:max-w-3/4'>
 					{selectedProject && (
 						<CustomCard>

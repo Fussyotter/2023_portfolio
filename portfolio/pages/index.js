@@ -27,7 +27,7 @@ function HeaderSection() {
 
 function MainSection() {
 	return (
-		<div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-2 p-8 px-2 shadow-lg rounded'>
+		<div className='grid grid-cols-1 md:grid-cols-1 custom:grid-cols-3 gap-2 p-10 shadow-lg rounded'>
 			<div className='w-full flex flex-col justify-start items-start lg:items-start'>
 				<TextAnimation text={'Work'} />
 				<Projects />
