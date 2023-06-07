@@ -105,7 +105,7 @@ const CustomCard = styled(Card)(({ theme }) => ({
 	padding: '4px',
 	boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
 	color: 'white',
-	width: '300px',
+	width: '95%', 
 	display: 'flex',
 	flexDirection: 'column',
 	height: '420px',
@@ -167,76 +167,76 @@ export default function Projects() {
 	useEffect(() => {
 		setCurrentImageIndex(0);
 	}, [selectedProject]);
-	return (
-		<div>
-			<div className='flex flex-col sm:flex-row gap-6 sm:gap-20 py-8'>
-				<div className='w-full sm:w-1/3 h-64 sm:h-auto overflow-y-auto sm:overflow-visible mr-0 sm:mr-12'>
-					<Slider
-						orientation='vertical'
-						min={0}
-						max={projects.length - 1}
-						step={1}
-						value={selectedProjectIndex}
-						onChange={handleSliderChange}
-						marks={marks}
-					/>
-				</div>
-				<div className='w-full sm:w-2/3 flex mt-6 sm:mt-0 ml-0 sm:ml-12'>
-					<div className='max-w-full md:max-w-3/4'>
-						{selectedProject && (
-							<CustomCard>
-								{imageArray.map((image, index) => (
-									<CardMedia
-										key={index}
-										component='img'
-										height='120'
-										image={image}
-										alt={selectedProject.name}
-										style={{
-											display: index === currentImageIndex ? 'block' : 'none',
-											maxHeight: '120px',
-										}}
-									/>
-								))}
-								<Button
-									onClick={handleNextImage}
-									disabled={imageArray.length === 1}>
-									Next Image
-								</Button>
-								<CardContent>
-									<Typography variant='h5' component='h2'>
-										{selectedProject.name}
-									</Typography>
-									<Typography variant='body2'>
-										{selectedProject.description}
-									</Typography>
-									<Typography variant='body2'>
-										Created with: {selectedProject.technologies.join(', ')}
-									</Typography>
-								</CardContent>
-								<CardActions>
-									{selectedProject.liveDemoUrl ? (
-										<Button
-											size='small'
-											href={selectedProject.liveDemoUrl}
-											target='_blank'
-											rel='noopener noreferrer'>
-											Live Demo
-										</Button>
-									) : null}
+return (
+	<div>
+		<div className='flex flex-col md:flex-row gap-6 md:gap-20 py-8'>
+			<div className='w-full md:w-1/3 h-64 md:h-auto overflow-y-auto md:overflow-visible mr-0 md:mr-12'>
+				<Slider
+					orientation='vertical'
+					min={0}
+					max={projects.length - 1}
+					step={1}
+					value={selectedProjectIndex}
+					onChange={handleSliderChange}
+					marks={marks}
+				/>
+			</div>
+			<div className='w-full md:w-2/3 flex mt-6 md:mt-0 ml-12 md:ml-12'>
+				<div className='max-w-full md:max-w-3/4'>
+					{selectedProject && (
+						<CustomCard>
+							{imageArray.map((image, index) => (
+								<CardMedia
+									key={index}
+									component='img'
+									height='120'
+									image={image}
+									alt={selectedProject.name}
+									style={{
+										display: index === currentImageIndex ? 'block' : 'none',
+										maxHeight: '120px',
+									}}
+								/>
+							))}
+							<Button
+								onClick={handleNextImage}
+								disabled={imageArray.length === 1}>
+								Next Image
+							</Button>
+							<CardContent>
+								<Typography variant='h5' component='h2'>
+									{selectedProject.name}
+								</Typography>
+								<Typography variant='body2'>
+									{selectedProject.description}
+								</Typography>
+								<Typography variant='body2'>
+									Created with: {selectedProject.technologies.join(', ')}
+								</Typography>
+							</CardContent>
+							<CardActions>
+								{selectedProject.liveDemoUrl ? (
 									<Button
 										size='small'
-										href={selectedProject.githubUrl}
+										href={selectedProject.liveDemoUrl}
 										target='_blank'
 										rel='noopener noreferrer'>
-										GitHub Repository
+										Live Demo
 									</Button>
-								</CardActions>
-							</CustomCard>
-						)}
-					</div>
+								) : null}
+								<Button
+									size='small'
+									href={selectedProject.githubUrl}
+									target='_blank'
+									rel='noopener noreferrer'>
+									GitHub Repository
+								</Button>
+							</CardActions>
+						</CustomCard>
+					)}
 				</div>
 			</div>
 		</div>
-	);
+	</div>
+);
 }
