@@ -2,7 +2,7 @@ import Projects from '@/components/projects';
 import Skills from '@/components/skills';
 import Icons from '@/components/icons';
 import TextAnimation from '@/components/TextAnimation';
-
+import App from '@/components/parallax';
 import Topics from '@/components/topics';
 
 function HeaderSection() {
@@ -55,9 +55,8 @@ function FooterSection() {
 export default function Home() {
 	return (
 		<>
-			<HeaderSection />
-			<MainSection />
-			<FooterSection />
+		<App />
+			{/* <MainSection /> */}
 		</>
 	);
 }

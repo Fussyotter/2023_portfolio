@@ -10,9 +10,13 @@ export default function Icons() {
 	const handleCloseModal = () => {
 		setIsModalOpen(false);
 	};
+	const stopPropagation = (e) => {
+		e.stopPropagation();
+		console.log('stopPropagation')
+	};
 
 	return (
-		<div>
+		<div onClick={stopPropagation}>
 			<a
 				href='https://www.linkedin.com/in/isaac-a-anderson/'
 				className='inline-block text-gray-600 hover:text-gray-800 transition duration-150 ease-in-out'>

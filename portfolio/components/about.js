@@ -2,16 +2,25 @@ import React from 'react';
 
 export default function About() {
 	return (
-		<div className=' grid-cols-4 grid-auto-rows-minmax(0, 1fr)'>
-			<p>
-				I am a software engineer with a passion for complex problems. I have
-				experience working with a variety of programming languages and tools,
-				and I am always eager to learn new technologies. I have over 8 years of
-				experience in freelance film production and supervision as well as
-				teaching Shakespeare and driving a forklift. Those two are not related,
-				but that would be fun. In my free time, I enjoy hiking, reading, and
-				experimenting with new recipes in the kitchen.
+		<div className='ml-3'>
+			<img src='next.svg' alt='Next.js' className=' mx-auto' />
+			<p className='text-2xl'>[About me]</p>
+			<p className='text-md'>
+				I come to Software Development from a performing arts background.
 			</p>
+			<p className='text-sm'>
+				Years as an actor has given me a unique approach to problem-solving and
+				collobration.
+			</p>
+			<p className='text-sm'>
+				I'm used to adapting to new situations very quickly and finding the best
+				way to contribute.
+			</p>
+			<p className='text-sm'>
+				I began my journey into software development in 2019 and have been
+				hooked ever since.
+			</p>
+			<p>My focus these days is building projects and developing my skills. </p>
 		</div>
 	);
 }
