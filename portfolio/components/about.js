@@ -3,7 +3,6 @@ import React from 'react';
 export default function About() {
 	return (
 		<div className='ml-3'>
-			<img src='next.svg' alt='Next.js' className=' mx-auto' />
 			<p className='text-2xl'>[About me]</p>
 			<p className='text-md'>
 				I come to Software Development from a performing arts background.
@@ -21,6 +20,7 @@ export default function About() {
 				hooked ever since.
 			</p>
 			<p>My focus these days is building projects and developing my skills. </p>
+<img src='next.svg' alt='Next.js' className='' />
 		</div>
 	);
 }
