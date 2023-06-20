@@ -79,7 +79,7 @@ const projects = [
 			'CSS',
 			'OpenAI',
 		],
-		liveDemoUrl: 'https://sage-front-b6sfogaf5-fussyotter.vercel.app/',
+		liveDemoUrl: 'https://sage-front.vercel.app/',
 		githubUrl: 'https://github.com/Fussyotter/sage_front/tree/main',
 	},
 	{
